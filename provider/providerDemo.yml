@@ -1,0 +1,67 @@
+mybatis:  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: cn.renode.cloud.api.entity
+  mapper-locations:  - classpath:mybatis/mapper/**/*.xml  
+spring:  application:    name: renodeCloud-provider-dept
+  http:
+    encoding:
+      charset: UTF-8
+  mvc:
+    date-format: yyyy-MM-dd
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      indent-output: true
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 50MB
+      location: c:/temp
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/demo?useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver    username: root
+    password: '{cipher}AQBX4e/o73EC6ruN9fSZaJ+iQUoBDChoQFN6tv5BTx/v7S72LUPD0nX4bP1NGmNFf3hwLOqzKE1/3Q1VtcfBNjBjif+oLRaXD2oFyojG0O2gdpRlAhMNYcJXoEBQh3p1N9mk3FmcUL/fplrAc89t26da6/PODbOQkx3mfSU1ypOYMklLmEUWVzdXPhUcmg4EPr+OHN4dXhBm7cqA58MLPNptT9p2BghKWnoRxp5/WbJYnapIW+0drST3X1aWt+TwlPDYzQBLYDM7Fx2XcwliMPk/TkuYorbJ0Kfnwrh2JcWa9uD/vBb0/6a5wmu8dVS2rly+FKaqOiksBEUew5JrJGSWNyt65ezQccfpLPplFREhOsPqMlxvSPJFZylbZdPKVtE='
+    druid:
+     initial-size: 5
+     min-idle: 5
+     max-active: 20
+     max-wait: 60000
+     time-between-eviction-runs-millis: 60000
+     min-evictable-idle-time-millis: 300000
+     validation-query: SELECT 1 FROM DUAL
+     test-while-idle: true
+     test-on-borrow: false
+     test-on-return: false
+     pool-prepared-statements: false
+     max-pool-prepared-statement-per-connection-size: 20
+     filters: stat,wall,slf4j
+     use-global-data-source-stat: true
+     connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+     web-stat-filter:
+      enabled: true
+      url-pattern: "/*"
+      exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+     stat-view-servlet:
+      enabled: true
+      url-pattern: /druid/*
+      allow: 127.0.0.1,192.168.163.1
+      deny: 192.168.1.73
+      reset-enable: false
+      login-username: admin
+      login-password: '{cipher}AQAWcs77Q5rWRzn7BavLmwp3U4aFJdnir25M8gbcJHycpPh1GJLXFWoTI/C/tQeNyjEHYKj2xP2tUeqLrTX9gMtWy2ccSIc4NOFFIweuPwiD4e31beOmSOoLPil2kTLNq/vt0yvqX/mkY3oLgxNLHL5NYfH7SN4TfmLkn2PtfuLqv03ACucNkOU8zlp1EQezGy6epi/T/ng7A1zNUdzeAScLPIbNaqJ3X6NqmNBlsjjPGXwRCpPp0XBhWbYye8XFqE3Nk5f6HNyI8uyi0itHop75yO1nDSQ6RtdzU1pSc74xkVtmMQFjHPIJ5ZxCOb2ADZBjJ7uTNMId8035bNnUTQRWz7vQWl7RMSX7W6YeuF0/oOck7FWydjfF8fLqmznXQBE='
+logging:  level:    cn.renode.cloud.mapper: debug
+eureka:  client:    service-url:
+           #微服务端向单个eureka服务中注册#     defaultZone: http://localhost:7001/eureka
+          #微服务端向多个eureka服务中注册
+      defaultZone: http://eureka.server1.com:7001/eureka/,http://eureka.server2.com:7002/eureka/,http://eureka.server3.com:7003/eureka/  instance:
+        #修改Status名称 可任意起名    instance-id: renodeCloud-provider-dept:8001
+        #修改Status列左下角显示IP
+    prefer-ip-address: true#Status点击跳转后的显示内容
+info:
+  app.name: renodeCloud-provider-dept
+  app.dsc: 部分信息服务
+  company.name: cn.renode
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  
