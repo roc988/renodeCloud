@@ -53,13 +53,6 @@ spring:  application:    name: renodeCloud-provider-dept
       login-username: admin
       login-password: '{cipher}AQAWcs77Q5rWRzn7BavLmwp3U4aFJdnir25M8gbcJHycpPh1GJLXFWoTI/C/tQeNyjEHYKj2xP2tUeqLrTX9gMtWy2ccSIc4NOFFIweuPwiD4e31beOmSOoLPil2kTLNq/vt0yvqX/mkY3oLgxNLHL5NYfH7SN4TfmLkn2PtfuLqv03ACucNkOU8zlp1EQezGy6epi/T/ng7A1zNUdzeAScLPIbNaqJ3X6NqmNBlsjjPGXwRCpPp0XBhWbYye8XFqE3Nk5f6HNyI8uyi0itHop75yO1nDSQ6RtdzU1pSc74xkVtmMQFjHPIJ5ZxCOb2ADZBjJ7uTNMId8035bNnUTQRWz7vQWl7RMSX7W6YeuF0/oOck7FWydjfF8fLqmznXQBE='
 logging:  level:    cn.renode.cloud.mapper: debug
-eureka:  client:    service-url:
-           #微服务端向单个eureka服务中注册#     defaultZone: http://localhost:7001/eureka
-          #微服务端向多个eureka服务中注册
-      defaultZone: http://eureka.server1.com:7001/eureka/,http://eureka.server2.com:7002/eureka/,http://eureka.server3.com:7003/eureka/  instance:
-        #修改Status名称 可任意起名    instance-id: renodeCloud-provider-dept:8001
-        #修改Status列左下角显示IP
-    prefer-ip-address: true#Status点击跳转后的显示内容
 info:
   app.name: renodeCloud-provider-dept
   app.dsc: 部分信息服务
