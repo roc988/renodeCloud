@@ -1,9 +1,11 @@
 ##
-mybatis:  config-location: classpath:mybatis/mybatis.cfg.xml
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
   type-aliases-package: cn.renode.cloud.api.entity
-  mapper-locations:  - classpath:mybatis/mapper/**/*.xml
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml
   
-spring:  application:    name: renodeCloud-provider-dept
+spring:
   http:
     encoding:
       charset: UTF-8
@@ -22,7 +24,8 @@ spring:  application:    name: renodeCloud-provider-dept
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://117.50.50.111:3306/demo?useSSL=false&characterEncoding=utf8&serverTimezone=UTC
-    driver-class-name: com.mysql.cj.jdbc.Driver    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
     password: '{cipher}AQBX4e/o73EC6ruN9fSZaJ+iQUoBDChoQFN6tv5BTx/v7S72LUPD0nX4bP1NGmNFf3hwLOqzKE1/3Q1VtcfBNjBjif+oLRaXD2oFyojG0O2gdpRlAhMNYcJXoEBQh3p1N9mk3FmcUL/fplrAc89t26da6/PODbOQkx3mfSU1ypOYMklLmEUWVzdXPhUcmg4EPr+OHN4dXhBm7cqA58MLPNptT9p2BghKWnoRxp5/WbJYnapIW+0drST3X1aWt+TwlPDYzQBLYDM7Fx2XcwliMPk/TkuYorbJ0Kfnwrh2JcWa9uD/vBb0/6a5wmu8dVS2rly+FKaqOiksBEUew5JrJGSWNyt65ezQccfpLPplFREhOsPqMlxvSPJFZylbZdPKVtE='
     druid:
      initial-size: 5
@@ -52,7 +55,10 @@ spring:  application:    name: renodeCloud-provider-dept
       reset-enable: false
       login-username: admin
       login-password: '{cipher}AQAWcs77Q5rWRzn7BavLmwp3U4aFJdnir25M8gbcJHycpPh1GJLXFWoTI/C/tQeNyjEHYKj2xP2tUeqLrTX9gMtWy2ccSIc4NOFFIweuPwiD4e31beOmSOoLPil2kTLNq/vt0yvqX/mkY3oLgxNLHL5NYfH7SN4TfmLkn2PtfuLqv03ACucNkOU8zlp1EQezGy6epi/T/ng7A1zNUdzeAScLPIbNaqJ3X6NqmNBlsjjPGXwRCpPp0XBhWbYye8XFqE3Nk5f6HNyI8uyi0itHop75yO1nDSQ6RtdzU1pSc74xkVtmMQFjHPIJ5ZxCOb2ADZBjJ7uTNMId8035bNnUTQRWz7vQWl7RMSX7W6YeuF0/oOck7FWydjfF8fLqmznXQBE='
-logging:  level:    cn.renode.cloud.mapper: debug#Status点击跳转后的显示内容
+logging:
+  level:
+    cn.renode.cloud.mapper: debug
+#Status点击跳转后的显示内容
 info:
   app.name: renodeCloud-provider-dept
   app.dsc: 部分信息服务
